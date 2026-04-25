@@ -629,6 +629,298 @@ select option:disabled {
   .waffle-legend { grid-template-columns: 1fr; }
 }
 
+
+/* =========================
+   Responsive dashboard fixes
+   Ensures visibility on laptops and smaller screens
+   ========================= */
+html, body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.layout {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+main {
+  min-width: 0 !important;
+  overflow-x: hidden !important;
+}
+
+.page {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+.grid,
+.grid.two,
+.grid.kpis,
+.map-grid,
+.rr-summary-grid {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.card,
+.kpi,
+.map-card,
+.waffle-card {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.chart,
+.chart.small,
+.chart.tall,
+.js-plotly-plot,
+.plot-container,
+.svg-container {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+.chart {
+  min-height: 300px !important;
+}
+
+.chart.small {
+  min-height: 280px !important;
+}
+
+.chart.tall {
+  min-height: 390px !important;
+}
+
+#map,
+#map-choropleth,
+.leaflet-container {
+  width: 100% !important;
+  min-height: 420px !important;
+}
+
+.waffle-wrap {
+  width: 100% !important;
+  max-width: 100% !important;
+  grid-template-columns: repeat(20, minmax(10px, 1fr)) !important;
+}
+
+.waffle-legend {
+  width: 100% !important;
+  grid-template-columns: 1fr !important;
+}
+
+table {
+  width: 100% !important;
+  table-layout: fixed !important;
+  word-wrap: break-word !important;
+}
+
+/* Medium laptop screens */
+@media (max-width: 1280px) {
+  body {
+    font-size: 13px !important;
+  }
+
+  header {
+    padding: 12px 18px !important;
+    gap: 16px !important;
+  }
+
+  .header-title-block h1 {
+    font-size: 22px !important;
+  }
+
+  .rco-logo-img,
+  header img {
+    max-width: 130px !important;
+    height: auto !important;
+  }
+
+  aside {
+    width: 245px !important;
+    min-width: 245px !important;
+  }
+
+  main {
+    padding: 12px !important;
+  }
+
+  .grid.two {
+    grid-template-columns: 1fr !important;
+  }
+
+  .map-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid.kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .chart {
+    min-height: 300px !important;
+  }
+
+  #map,
+  #map-choropleth {
+    min-height: 390px !important;
+  }
+}
+
+/* Small laptop/tablet screens */
+@media (max-width: 1024px) {
+  .layout {
+    display: block !important;
+  }
+
+  aside {
+    position: relative !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    border-right: none !important;
+    border-bottom: 1px solid #dbe8f3 !important;
+  }
+
+  .nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .nav button {
+    flex: 1 1 150px !important;
+    min-width: 140px !important;
+  }
+
+  .filter-block {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px 12px !important;
+  }
+
+  .filter-block h3,
+  .filter-note,
+  .filter-block .reset {
+    grid-column: 1 / -1 !important;
+  }
+
+  .checkbox-filter {
+    width: 100% !important;
+  }
+
+  .checkbox-filter-menu {
+    position: fixed !important;
+    left: 16px !important;
+    right: 16px !important;
+    top: 110px !important;
+    max-height: 65vh !important;
+    z-index: 99999 !important;
+  }
+
+  main {
+    width: 100% !important;
+    padding: 12px !important;
+  }
+
+  .grid.kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .section-title {
+    display: block !important;
+  }
+}
+
+/* Mobile and narrow screens */
+@media (max-width: 720px) {
+  header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .header-title-block h1 {
+    font-size: 20px !important;
+  }
+
+  .reporting-period {
+    font-size: 12px !important;
+  }
+
+  .filter-block {
+    grid-template-columns: 1fr !important;
+  }
+
+  .grid.kpis,
+  .grid.two,
+  .map-grid,
+  .rr-summary-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .card {
+    padding: 12px !important;
+  }
+
+  .chart,
+  .chart.small,
+  .chart.tall {
+    min-height: 300px !important;
+  }
+
+  #map,
+  #map-choropleth {
+    min-height: 360px !important;
+  }
+
+  .waffle-wrap {
+    grid-template-columns: repeat(10, minmax(12px, 1fr)) !important;
+    gap: 4px !important;
+  }
+
+  .waffle-legend-item {
+    grid-template-columns: 14px 1fr auto !important;
+  }
+
+  .waffle-pct {
+    display: none !important;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  main {
+    padding: 8px !important;
+  }
+
+  .grid.kpis {
+    grid-template-columns: 1fr !important;
+  }
+
+  .section-title h2 {
+    font-size: 18px !important;
+  }
+
+  .chart,
+  .chart.small,
+  .chart.tall {
+    min-height: 280px !important;
+  }
+
+  #map,
+  #map-choropleth {
+    min-height: 320px !important;
+  }
+}
+
 </style>
 <style>
 /* Final header polish */
@@ -1620,6 +1912,36 @@ document.addEventListener("click", () => {
 
 // Initial build after the dashboard initializes.
 setTimeout(buildCheckboxDropdowns, 100);
+</script>
+
+
+<script>
+(function(){
+  function resizeDashboardVisuals(){
+    try {
+      document.querySelectorAll('.js-plotly-plot').forEach(function(el){
+        if (window.Plotly) Plotly.Plots.resize(el);
+      });
+    } catch(e) {}
+    try {
+      if (typeof map !== "undefined" && map) map.invalidateSize();
+      if (typeof choroMap !== "undefined" && choroMap) choroMap.invalidateSize();
+    } catch(e) {}
+  }
+
+  window.addEventListener('resize', function(){
+    clearTimeout(window.__dashboardResizeTimer);
+    window.__dashboardResizeTimer = setTimeout(resizeDashboardVisuals, 250);
+  });
+
+  document.addEventListener('click', function(e){
+    if (e.target && e.target.matches('.nav button')) {
+      setTimeout(resizeDashboardVisuals, 350);
+    }
+  });
+
+  setTimeout(resizeDashboardVisuals, 600);
+})();
 </script>
 
 </body>
