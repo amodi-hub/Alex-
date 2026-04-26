@@ -1499,9 +1499,24 @@ function plotDonut(id, entries, title) { if(!document.getElementById(id)) return
   }, {responsive:true, displayModeBar:false});
 }
 
+
+function uniqueAgencyCount(rows) {
+  const agencies = new Set();
+  rows.forEach(r => {
+    const raw = (r["Reporting Agency"] || "").toString().trim();
+    if (!raw) return;
+    raw.split("/").forEach(part => {
+      const agency = part.trim();
+      if (agency) agencies.add(agency);
+    });
+  });
+  return agencies.size;
+}
+
+
 function updateKPIs(rows, rrrows) {
   const people = sum(rows, r => r.Number);
-  const agencies = unique(rows, r=>r["Reporting Agency"]).length;
+  const agencies = uniqueAgencyCount(rows);
   const states = unique(rows, r=>r.State).length;
   const counties = unique(rows, r=>r.County).length;
   const indicators = unique(rows, r=>r.Indicator).length;
