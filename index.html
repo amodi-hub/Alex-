@@ -1317,17 +1317,9 @@ header {
         Required fields: Donor Name, Donor Logo, Amount Contributed, Funding Status, Agency Funded, Output/Category, State/County and Funding Period. The module is structured to show donor recognition cards, donor-to-agency-to-output flows, funding gaps and geographic funding coverage.
       </div>
 <div class="grid two" style="margin-top:14px">
-<div class="card"><div class="chart small" id="chart-funding-fields"></div></div>
+
 <div class="card">
-<h3 style="margin-top:0;color:var(--un-dark)">Recommended donor visuals</h3>
-<table>
-<tr><th>Visual</th><th>Purpose</th></tr>
-<tr><td>Donor logo cards</td><td>Recognise funding partners and show headline contribution.</td></tr>
-<tr><td>Donor → Agency → Output Sankey</td><td>Show how funding translates into collective outcome results.</td></tr>
-<tr><td>Funding gap bars</td><td>Highlight unmet needs by output and geography.</td></tr>
-<tr><td>Map overlay</td><td>Show funded coverage by state/county.</td></tr>
-</table>
-</div>
+<h3 style="margin-top:0;color:var(--un-dark)">
 </div>
 </section>
 <section class="page" id="geo">
@@ -1734,13 +1726,7 @@ function updateAgencies(rows) {
 }
 
 function updateDonors() {
-  Plotly.newPlot("chart-funding-fields", [{type:"bar", x:["Donor name","Logo","Amount","Agency","Output","Location","Period"], y:[1,1,1,1,1,1,1], marker:{color:"#9CCDE4"}}], {
-    title:{text:"Required fields to activate donor module", font:{size:15,color:"#003B5C"}},
-    margin:{l:40,r:20,t:50,b:95},
-    yaxis:{visible:false},
-    paper_bgcolor:"white", plot_bgcolor:"white"
-  }, {responsive:true, displayModeBar:false});
-}
+  }
 
 function initMap() {
   if (!map) {
@@ -2226,6 +2212,18 @@ setTimeout(buildCheckboxDropdowns, 100);
     }
   }, 500);
 })();
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll("h3, h2, .waffle-title").forEach(el => {
+    if (el.textContent && el.textContent.toLowerCase().includes("required fields to activate donor module")) {
+      const parent = el.closest(".card") || el.parentElement;
+      if (parent) parent.remove();
+    }
+  });
+});
 </script>
 
 </body>
