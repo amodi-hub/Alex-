@@ -1362,7 +1362,7 @@ header {
     <div><strong>Potential double counting:</strong> People reached may include overlaps across agencies, outputs and services. Individuals receiving multiple services may be counted more than once.</div>
     <div><strong>Agency-reported data:</strong> Figures are based on agency submissions and may vary by methodology, definitions, reporting frequency and verification approach.</div>
     <div><strong>Joint implementation:</strong> Combined agency entries, such as UNICEF/WHO, reflect joint reporting. They do not necessarily imply separate independent delivery by each agency.</div>
-    <div><strong>Geographic coverage:</strong> Maps reflect reported locations and available coordinates. Precision may vary where activities cover multiple counties or states.</div>
+    <div><strong>
     <div><strong>Disaggregation limitations:</strong> Sex, IDP, returnee and host community breakdowns depend on data availability and may not be complete for all indicators.</div>
     <div><strong>Rapid response figures:</strong> Rapid response data may follow a separate counting methodology and should be interpreted alongside the overall reach figures with caution.</div>
   </div>
@@ -1654,7 +1654,7 @@ function updateKPIs(rows, rrrows) {
   const topOut = topEntries(groupSum(rows, r=>r.Output, r=>r.Number),1)[0] || ["No output",0];
   const topState = topEntries(groupSum(rows, r=>r.State, r=>r.Number),1)[0] || ["No state",0];
   const topAgency = topEntries(groupSum(rows, r=>r["Reporting Agency"], r=>r.Number),1)[0] || ["No agency",0];
-  document.getElementById("headline").innerHTML = `<strong>Key reading:</strong> With current filters, reported reach is <strong>${fmt(people)}</strong>. The largest output is <strong>${topOut[0]}</strong> (${fmt(topOut[1])}), the highest geographic reach is in <strong>${topState[0]}</strong> (${fmt(topState[1])}), and the leading reporting contribution is <strong>${topAgency[0]}</strong> (${fmt(topAgency[1])}).`;
+  document.getElementById("headline").innerHTML = `<strong>Key figures:</strong> With current filters, reported reach is <strong>${fmt(people)}</strong>. The largest output is <strong>${topOut[0]}</strong> (${fmt(topOut[1])}), the highest geographic reach is in <strong>${topState[0]}</strong> (${fmt(topState[1])}), and the leading reporting contribution is <strong>${topAgency[0]}</strong> (${fmt(topAgency[1])}).`;
 }
 
 
