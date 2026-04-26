@@ -1012,6 +1012,68 @@ table {
   flex: 1;
 }
 
+
+/* UN-style data caveats panel */
+.caveat-card {
+  border-left: 5px solid #0072BC !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbfe 100%) !important;
+}
+.caveat-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.caveat-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #0072BC;
+  color: #ffffff;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  flex: 0 0 auto;
+}
+.caveat-header h3 {
+  margin: 0;
+  color: #003B5C;
+  font-size: 17px;
+  font-weight: 900;
+}
+.caveat-header p {
+  margin: 3px 0 0 0;
+  color: #60758a;
+  font-size: 12px;
+}
+.caveat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 16px;
+  color: #173b63;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.caveat-grid strong {
+  color: #003B5C;
+}
+.caveat-footer {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #edf6fb;
+  color: #003B5C;
+  font-size: 12px;
+  font-weight: 700;
+}
+@media (max-width: 800px) {
+  .caveat-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
 <style>
 /* Final header polish */
@@ -1287,6 +1349,28 @@ header {
   <div id="waffle-legend" class="waffle-legend"></div>
 </div>
 </div>
+
+<div class="card caveat-card" style="margin-top:14px">
+  <div class="caveat-header">
+    <div class="caveat-icon">i</div>
+    <div>
+      <h3>Data Caveats and Interpretation Notes</h3>
+      <p>Important guidance for interpreting dashboard figures and visualisations.</p>
+    </div>
+  </div>
+  <div class="caveat-grid">
+    <div><strong>Potential double counting:</strong> People reached may include overlaps across agencies, outputs and services. Individuals receiving multiple services may be counted more than once.</div>
+    <div><strong>Agency-reported data:</strong> Figures are based on agency submissions and may vary by methodology, definitions, reporting frequency and verification approach.</div>
+    <div><strong>Joint implementation:</strong> Combined agency entries, such as UNICEF/WHO, reflect joint reporting. They do not necessarily imply separate independent delivery by each agency.</div>
+    <div><strong>Geographic coverage:</strong> Maps reflect reported locations and available coordinates. Precision may vary where activities cover multiple counties or states.</div>
+    <div><strong>Disaggregation limitations:</strong> Sex, IDP, returnee and host community breakdowns depend on data availability and may not be complete for all indicators.</div>
+    <div><strong>Rapid response figures:</strong> Rapid response data may follow a separate counting methodology and should be interpreted alongside the overall reach figures with caution.</div>
+  </div>
+  <div class="caveat-footer">
+    Results should be interpreted as indicative of reported programme reach for the selected reporting period, not necessarily as unique beneficiaries.
+  </div>
+</div>
+
 </section>
 <section class="page" id="outcomes">
 <div class="section-title">
